@@ -19,6 +19,7 @@ std::cout << "\nPASSWORD:\n\n";
 
 			else if (getMapVal(Modifiers::CharsOnly) && !hasNums(temp))
 			std::cout << temp << std::endl;
+
 			else if (!getMapVal(Modifiers::CharsOnly) && !getMapVal(Modifiers::NumsOnly))
 			std::cout << temp << std::endl;
 

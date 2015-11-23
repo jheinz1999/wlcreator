@@ -88,7 +88,7 @@ ARGUMENTS:\n\n\
 --length: Narrows by length\n\
 --max-length: Sets max password length\n\
 --min-length: Sets min password length\n\
---numbers-only: Numbers only\n\
+--nums-only: Numbers only\n\
 --chars-only: Characters only\n\
 --upper-only: Uppercase only\n\
 --lower-only: Lowercase only\n\n\
