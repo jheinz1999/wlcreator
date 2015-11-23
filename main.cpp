@@ -4,7 +4,7 @@ WLCREATOR
 
 by Jonathan Heinz
 
-Last Modified: 11/21/15
+Last Modified: 11/23/15
 
 Description: wlcreator is a command-line tool that was designed to be used with bruteforce programs. It
 is used to narrow large wordlists based on certain criteria.
@@ -44,6 +44,7 @@ ARGUMENTS:
 #include <sstream>
 
 void usage();
+void help();
 
 enum Modifiers {
 Password,  NumsOnly,  CharsOnly, 
@@ -69,5 +70,34 @@ void usage() {
 
 std::cout << "Usage: wlcreator -i [inputfile] -o [outputfile] [options]\nType \"wlcreator --help\" for a list\
  of options\n";
+
+}
+
+void help() {
+
+std::cout << "WLCREATOR\n\n\
+by Jonathan Heinz\n\n\
+Last Modified: 11/23/15\n\n\
+Description: wlcreator is a command-line tool that was designed to be used with bruteforce programs. It\n\
+is used to narrow large wordlists based on certain criteria.\n\n\
+USAGE:\n\n\
+wlcreator -i [inputfile] -o [outputfile] [args]\n\n\
+ARGUMENTS:\n\n\
+--help: Shows help\n\
+--password <password>: Narrows based on password\n\
+--length: Narrows by length\n\
+--max-length: Sets max password length\n\
+--min-length: Sets min password length\n\
+--numbers-only: Numbers only\n\
+--chars-only: Characters only\n\
+--upper-only: Uppercase only\n\
+--lower-only: Lowercase only\n\n\
+-n: No numbers\n\
+-c: No characters\n\
+-l: No lowercase\n\
+-u: No uppercase\n\
+-s: No special characters\n\n";
+
+exit(0);
 
 }

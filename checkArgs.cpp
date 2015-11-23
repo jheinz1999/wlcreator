@@ -4,13 +4,6 @@ void PasswordNarrower::checkArgs(int argc, char** argv) {
 
 int argPos = 1;
 
-	if (argc < 5) {
-
-	usage();
-	exit(1);
-
-	}
-
 	while (argPos < argc) {
 
 	parsed = 0;
@@ -169,6 +162,15 @@ int argPos = 1;
 
 		argPos += 2;
 		parsed = 1;
+
+		}
+
+		else if (i == "--help") {
+
+		argPos = argc;
+		parsed = 1;
+		helped = 1;
+		help();
 
 		}
 		

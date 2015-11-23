@@ -19,7 +19,7 @@ class PasswordNarrower {
 
 	std::map<Modifiers, bool> modifiers;
 
-	bool inputted, outputted, parsed;
+	bool inputted, outputted, parsed, helped;
 
 	bool hasChars(std::string str);
 	bool hasNums(std::string str);
@@ -35,6 +35,7 @@ PasswordNarrower::PasswordNarrower() {
 inputted = 0;
 outputted = 0;
 parsed = 0;
+helped = 0;
 
 minLength = 1;
 maxLength = 20;
