@@ -10,9 +10,7 @@ std::string temp;
 
 std::cout << "\nPASSWORD:\n\n";
 
-	for (int x = 0; x < 100000; x++) {
-
-	i >> temp;
+	while (i >> temp) {
 
 		if (temp.length() == length && getMapVal(Modifiers::Length)) {
 
