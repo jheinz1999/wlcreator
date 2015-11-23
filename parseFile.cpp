@@ -25,7 +25,7 @@ std::cout << "\nPASSWORD:\n\n";
 
 		}
 
-		else if (temp.length() <= maxLength && temp.length() >= minLength) {
+		else if (temp.length() <= maxLength && temp.length() >= minLength && !getMapVal(Modifiers::Length)) {
 			
 			if (getMapVal(Modifiers::NumsOnly) && !hasChars(temp) && hasNums(temp))
 			std::cout << temp << std::endl;

@@ -40,7 +40,7 @@ int argPos = 1;
 
 		}
 
-		else if (i == "--numbers-only") {
+		else if (i == "--nums-only") {
 
 		argPos++;
 
