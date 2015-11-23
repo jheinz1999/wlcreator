@@ -56,6 +56,8 @@ NoSpecial, Length};
 
 int main(int argc, char** argv) {
 
+std::cout << "WLCREATOR\n";
+
 PasswordNarrower device;
 
 device.checkArgs(argc, argv);
