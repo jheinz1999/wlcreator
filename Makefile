@@ -3,3 +3,6 @@ all: main.cpp
 
 install: 
 	cp wlcreator /usr/bin/
+
+clean:
+	rm /usr/bin/wlcreator
