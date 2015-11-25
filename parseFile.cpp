@@ -15,9 +15,11 @@ std::string temp;
 	if (getMapVal(Modifiers::Password))
 	passwordInit();
 
+int tempPwCount = 0;
+
 	while (i >> temp) {
 
-	int tempPwCount = 0;
+	tempPwCount = 0;
 
 		if (temp.length() == length && getMapVal(Modifiers::Length)) {
 

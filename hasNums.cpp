@@ -1,6 +1,6 @@
 // hasNums.cpp - Checks if string contains Numbers
 
-bool PasswordNarrower::hasNums(std::string str) {
+bool PasswordNarrower::hasNums(std::string &str) {
 
 	if (str.find('0') != std::string::npos || 
 		str.find('1') != std::string::npos || 

@@ -22,8 +22,8 @@ class PasswordNarrower {
 
 	bool inputted, outputted, parsed, helped;
 
-	bool hasChars(std::string str);
-	bool hasNums(std::string str);
+	bool hasChars(std::string &str);
+	bool hasNums(std::string &str);
 	
 	int maxLength;
 	int minLength;
