@@ -46,7 +46,7 @@ ARGUMENTS:
 void usage();
 void help();
 
-enum Modifiers {
+enum Modifiers { // Enum which contains different cli options
 Password,  NumsOnly,  CharsOnly, 
 UpperOnly, LowerOnly, NoNums, 
 NoChars,   NoLow,     NoUp, 

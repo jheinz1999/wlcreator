@@ -2,4 +2,16 @@ WLCREATOR
 
 By Jonathan Heinz
 
+wlcreator is a custom wordlist/dictionary creator designed for use in brute force programs.
 
+It is intended to be used when you know certain properties of a password, and don't want to waste time
+checking every password in a large dictionary.
+
+wlcreator can be used to create custom dictionaries based on certain criteria. Currently, the active
+filters are:
+
+--chars-only: creates a wordlist with character-based passwords.
+--nums-only: creates a wordlist with number-based passwords.
+--length [length]: Creates a wordlist with only passwords of a certain length.
+--min-length [length]: Creates a wordlist with a minimum length.
+--max-length [length]: Creates a wordlist with a maximum length.

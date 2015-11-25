@@ -2,10 +2,10 @@
 
 void PasswordNarrower::updateMap(Modifiers mod, bool val) {
 
-std::map<Modifiers, bool>::iterator i = modifiers.find(mod);
+std::map<Modifiers, bool>::iterator i = modifiers.find(mod); // searches for key
 
 	if (i != modifiers.end())
-	i->second = val;
+	i->second = val; // adds value
 
 }
 
