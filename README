@@ -11,7 +11,18 @@ wlcreator can be used to create custom dictionaries based on certain criteria. C
 filters are:
 
 --chars-only: creates a wordlist with character-based passwords.
+
 --nums-only: creates a wordlist with number-based passwords.
+
 --length [length]: Creates a wordlist with only passwords of a certain length.
+
 --min-length [length]: Creates a wordlist with a minimum length.
+
 --max-length [length]: Creates a wordlist with a maximum length.
+
+--password [password]: Creates a password based on the password provided. This is useful if you know specific
+things about the password, such as what character comes first. Passwords are entered by typing the characters
+you know followed by asterisks. For example, if you knew that the password was 8 characters long, and that the
+first four characters were "love", you'd type:
+
+wlcreator --password love****
