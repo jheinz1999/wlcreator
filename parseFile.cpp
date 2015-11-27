@@ -39,8 +39,15 @@ int tempPwCount = 0; // If using password-based narrowing, this variable counts 
 			else if (getArgVal(Modifiers::CharsOnly) && !hasNums(temp)) // if searching for character passwords
 			o << temp << std::endl;
 
-			else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly))
+			else if (getArgVal(Modifiers::UpperOnly) && !hasLower(temp) && !hasNums(temp))
 			o << temp << std::endl;
+
+			else if (getArgVal(Modifiers::LowerOnly) && !hasUpper(temp) && !hasNums(temp))
+			o << temp << std::endl;
+
+			else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly) && !getArgVal(Modifiers::UpperOnly) && !getArgVal(Modifiers::LowerOnly))
+			o << temp << std::endl;
+
 
 		}
 
@@ -54,7 +61,13 @@ int tempPwCount = 0; // If using password-based narrowing, this variable counts 
 				else if (getArgVal(Modifiers::CharsOnly) && !hasNums(temp))
 				o << temp << std::endl;
 
-				else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly))
+				else if (getArgVal(Modifiers::UpperOnly) && !hasLower(temp) && !hasNums(temp))
+				o << temp << std::endl;
+
+				else if (getArgVal(Modifiers::LowerOnly) && !hasUpper(temp) && !hasNums(temp))
+				o << temp << std::endl;
+
+				else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly) && !getArgVal(Modifiers::UpperOnly)  && !getArgVal(Modifiers::LowerOnly))
 				o << temp << std::endl;
 
 			}

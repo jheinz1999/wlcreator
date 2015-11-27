@@ -14,6 +14,10 @@ filters are:
 
 --nums-only: creates a wordlist with number-based passwords.
 
+--lower-only: Creates a wordlist with lowercase passwords.
+
+--upper-only: Creates a wordlist with uppercase passwords.
+
 --length [length]: Creates a wordlist with only passwords of a certain length.
 
 --min-length [length]: Creates a wordlist with a minimum length.
