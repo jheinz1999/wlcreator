@@ -1,7 +1,7 @@
 all: main.cpp
-	g++ main.cpp -o wlcreator -std=c++11
+	g++ main.cpp checkArgs.cpp getArgVal.cpp hasChars.cpp hasNums.cpp parseFile.cpp passwordInit.cpp  updateArgs.cpp constructor.cpp -o wlcreator -std=c++11
 
-install: 
+install:
 	cp wlcreator /usr/bin/
 
 clean:

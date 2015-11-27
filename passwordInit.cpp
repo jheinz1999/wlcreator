@@ -1,5 +1,8 @@
 // passwordInit.cpp - initializes password-based narrowing
 
+#include "passwordNarrower.hpp"
+#include "modifiers.hpp"
+
 void PasswordNarrower::passwordInit() {
 
 pwCount = 0; // This variable stores the number of known characters

@@ -33,24 +33,10 @@ ARGUMENTS:
 
 */
 
-#include <iostream>
-#include <fstream>
-#include <cstdlib>
-#include <vector>
-#include <map>
-#include <iomanip>
-#include <thread>
-#include <chrono>
-#include <sstream>
-
 void usage();
 void help();
 
-enum Modifiers { // Enum which contains different cli options
-Password,  NumsOnly,  CharsOnly, 
-UpperOnly, LowerOnly, NoNums, 
-NoChars,   NoLow,     NoUp, 
-NoSpecial, Length};
+#include <iostream>
 
 #include "passwordNarrower.hpp"
 

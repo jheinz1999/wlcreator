@@ -1,12 +1,19 @@
 // checkArgs.cpp - Checks command line arguments
 
+#include "passwordNarrower.hpp"
+#include "modifiers.hpp"
+
+#include <string>
+#include <sstream>
+
+void help();
+void usage();
+
 void PasswordNarrower::checkArgs(int argc, char** argv) {
 
 int argPos = 1; // Index value of current argument that is being parsed
 
 	while (argPos < argc) { // Repeats until all arguments have been parsed
-
-	parsed = 0; // Boolean, if false after following if/else statements, skip the option
 
 	std::string i = argv[argPos]; // argv must be converted to string for comparison
 
@@ -16,8 +23,6 @@ int argPos = 1; // Index value of current argument that is being parsed
 		argPos += 2; // changes the argument position to one after the input
 		inputted = 1; // Sets flag so program knows there is an input file
 
-		parsed = 1; // sets parsed to true
-
 		}
 
 		else if (i == "-o") { // specifies output file
@@ -26,17 +31,13 @@ int argPos = 1; // Index value of current argument that is being parsed
 		argPos += 2;
 		outputted = 1;
 
-		parsed = 1;
-
 		}
 
 		else if (i == "--password") { // specifies password, if you know part of it
 
 		tempPass = argv[argPos + 1];
 		argPos += 2;
-		updateMap(Modifiers::Password, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::Password, 1);
 
 		}
 
@@ -44,9 +45,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::NumsOnly, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::NumsOnly, 1);
 
 		}
 		
@@ -54,9 +53,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::CharsOnly, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::CharsOnly, 1);
 
 		}
 		
@@ -64,9 +61,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::UpperOnly, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::UpperOnly, 1);
 
 		}
 		
@@ -74,9 +69,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::LowerOnly, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::LowerOnly, 1);
 
 		}
 		
@@ -84,9 +77,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::NoNums, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::NoNums, 1);
 
 		}
 		 
@@ -94,9 +85,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::NoChars, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::NoChars, 1);
 
 		}
 		
@@ -104,9 +93,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::NoLow, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::NoLow, 1);
 
 		}
 		
@@ -114,9 +101,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::NoUp, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::NoUp, 1);
 
 		}
 		
@@ -124,9 +109,7 @@ int argPos = 1; // Index value of current argument that is being parsed
 
 		argPos++;
 
-		updateMap(Modifiers::NoSpecial, 1);
-		
-		parsed = 1;
+		updateArgs(Modifiers::NoSpecial, 1);
 
 		}
 
@@ -137,7 +120,6 @@ int argPos = 1; // Index value of current argument that is being parsed
 		stream >> maxLength;
 
 		argPos += 2;
-		parsed = 1;
 
 		}
 
@@ -148,7 +130,6 @@ int argPos = 1; // Index value of current argument that is being parsed
 		stream >> minLength;
 
 		argPos += 2;
-		parsed = 1;
 
 		}
 
@@ -158,23 +139,21 @@ int argPos = 1; // Index value of current argument that is being parsed
 		stream << argv[argPos + 1];
 		stream >> length;
 
-		updateMap(Modifiers::Length, 1);
+		updateArgs(Modifiers::Length, 1);
 
 		argPos += 2;
-		parsed = 1;
 
 		}
 
 		else if (i == "--help") { // shows help dialog
 
 		argPos = argc;
-		parsed = 1;
 		helped = 1;
 		help();
 
 		}
 		
-		if (!parsed)
+		else
 		argPos++;
 
 	}

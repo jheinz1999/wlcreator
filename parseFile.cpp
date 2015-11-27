@@ -1,5 +1,11 @@
 // parseFile.cpp - Parses file
 
+#include "passwordNarrower.hpp"
+#include "modifiers.hpp"
+
+#include <fstream>
+#include <string>
+
 void PasswordNarrower::parseFile() {
 
 std::ifstream i; // input file
@@ -14,7 +20,7 @@ o.open(output.c_str());
 
 std::string temp; // variable where string is stored before adding to file
 
-	if (getMapVal(Modifiers::Password)) // initializes password-based narrowing
+	if (getArgVal(Modifiers::Password)) // initializes password-based narrowing
 	passwordInit();
 
 int tempPwCount = 0; // If using password-based narrowing, this variable counts how many characters are
@@ -24,30 +30,30 @@ int tempPwCount = 0; // If using password-based narrowing, this variable counts 
 
 	tempPwCount = 0;
 
-		if (temp.length() == length && getMapVal(Modifiers::Length)) { // If doing a precise length search
+		if (temp.length() == length && getArgVal(Modifiers::Length)) { // If doing a precise length search
 
-			if (getMapVal(Modifiers::NumsOnly) && !hasChars(temp) && hasNums(temp)) // If searching for number passwords
+			if (getArgVal(Modifiers::NumsOnly) && !hasChars(temp) && hasNums(temp)) // If searching for number passwords
 			o << temp << std::endl;
 
-			else if (getMapVal(Modifiers::CharsOnly) && !hasNums(temp)) // if searching for character passwords
+			else if (getArgVal(Modifiers::CharsOnly) && !hasNums(temp)) // if searching for character passwords
 			o << temp << std::endl;
 
-			else if (!getMapVal(Modifiers::CharsOnly) && !getMapVal(Modifiers::NumsOnly))
+			else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly))
 			o << temp << std::endl;
 
 		}
 
-		else if (temp.length() <= maxLength && temp.length() >= minLength && !getMapVal(Modifiers::Length)) {
+		else if (temp.length() <= maxLength && temp.length() >= minLength && !getArgVal(Modifiers::Length)) {
 		
-			if (!getMapVal(Modifiers::Password)) { // If not doing a password-based search
+			if (!getArgVal(Modifiers::Password)) { // If not doing a password-based search
 
-				if (getMapVal(Modifiers::NumsOnly) && !hasChars(temp) && hasNums(temp))
+				if (getArgVal(Modifiers::NumsOnly) && !hasChars(temp) && hasNums(temp))
 				o << temp << std::endl;
 
-				else if (getMapVal(Modifiers::CharsOnly) && !hasNums(temp))
+				else if (getArgVal(Modifiers::CharsOnly) && !hasNums(temp))
 				o << temp << std::endl;
 
-				else if (!getMapVal(Modifiers::CharsOnly) && !getMapVal(Modifiers::NumsOnly))
+				else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly))
 				o << temp << std::endl;
 
 			}
@@ -65,13 +71,13 @@ int tempPwCount = 0; // If using password-based narrowing, this variable counts 
 
 					if (tempPwCount == pwCount) { // If an equal number of known characters are similar
 					
-						if (getMapVal(Modifiers::NumsOnly) && !hasChars(temp) && hasNums(temp))
+						if (getArgVal(Modifiers::NumsOnly) && !hasChars(temp) && hasNums(temp))
 						o << temp << std::endl;
 
-						else if (getMapVal(Modifiers::CharsOnly) && !hasNums(temp))
+						else if (getArgVal(Modifiers::CharsOnly) && !hasNums(temp))
 						o << temp << std::endl;
 
-						else if (!getMapVal(Modifiers::CharsOnly) && !getMapVal(Modifiers::NumsOnly))
+						else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly))
 						o << temp << std::endl;
 
 					}
