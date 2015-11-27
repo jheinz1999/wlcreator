@@ -29,9 +29,6 @@ class PasswordNarrower {
 	std::map<Modifiers, bool> modifiers; // Map containing command line arguments
 
 	bool inputted, outputted, helped; // Boolean values for argument checking
-
-	bool hasChars(std::string &str); // Returns true if string has characters
-	bool hasNums(std::string &str); // Returns true if string has numbers
 	
 	int maxLength; // Max password length
 	int minLength; // Min password length
