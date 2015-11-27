@@ -5,4 +5,4 @@ install:
 	cp wlcreator /usr/bin/
 
 clean:
-	rm /usr/bin/wlcreator
+	rm /usr/bin/wlcreator rm wlcreator
