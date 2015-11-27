@@ -2,6 +2,7 @@
 
 #include "passwordNarrower.hpp"
 #include "modifiers.hpp"
+#include "stringops.hpp"
 
 #include <fstream>
 #include <string>
