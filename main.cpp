@@ -37,16 +37,27 @@ void usage();
 void help();
 
 #include <iostream>
+#include <ctime>
 
 #include "passwordNarrower.hpp"
 
 int main(int argc, char** argv) {
+
+std::clock_t begin, end;
+
+begin = std::clock();
 
 PasswordNarrower device;
 
 device.checkArgs(argc, argv);
 
 device.parseFile();
+
+end = std::clock();
+
+float elapsed = (float)end - (float)begin;
+
+std::cout << "ELAPSED TIME: " << (elapsed / CLOCKS_PER_SEC) << std::endl;
 
 return 0;
 
