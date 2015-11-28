@@ -39,13 +39,13 @@ int tempPwCount = 0; // If using password-based narrowing, this variable counts 
 			else if (getArgVal(Modifiers::CharsOnly) && !hasNums(temp)) // if searching for character passwords
 			o << temp << std::endl;
 
-			else if (getArgVal(Modifiers::UpperOnly) && !hasLower(temp) && !hasNums(temp))
+			else if (getArgVal(Modifiers::UpperOnly) && !hasLower(temp) && !hasNums(temp)) // if searching for uppercase passwords
 			o << temp << std::endl;
 
-			else if (getArgVal(Modifiers::LowerOnly) && !hasUpper(temp) && !hasNums(temp))
+			else if (getArgVal(Modifiers::LowerOnly) && !hasUpper(temp) && !hasNums(temp)) // if searching for lowercase passwords
 			o << temp << std::endl;
 
-			else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly) && !getArgVal(Modifiers::UpperOnly) && !getArgVal(Modifiers::LowerOnly))
+			else if (!getArgVal(Modifiers::CharsOnly) && !getArgVal(Modifiers::NumsOnly) && !getArgVal(Modifiers::UpperOnly) && !getArgVal(Modifiers::LowerOnly)) // if no cli options were given
 			o << temp << std::endl;
 
 
